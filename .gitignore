@@ -1,6 +1,7 @@
 # Common
 dist
 node_modules
+.idea
 .eslintcache
 vite.config.*.timestamp*
 
@@ -16,3 +17,5 @@ vite.config.*.timestamp*
 # Using pnpm and bun
 package-lock.json
 yarn.lock
+*lock*
+**/*.bak

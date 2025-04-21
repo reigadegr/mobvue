@@ -27,9 +27,9 @@ jobs:
       - name: Build
         run: pnpm install && pnpm build
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@releases/v3
-        with:
-          ACCESS_TOKEN: ${{ secrets.MOBVUE }}
-          BRANCH: gh-pages
-          FOLDER: dist
+      # - name: Deploy
+        # uses: JamesIves/github-pages-deploy-action@releases/v3
+        # with:
+          # ACCESS_TOKEN: ${{ secrets.MOBVUE }}
+          # BRANCH: gh-pages
+          # FOLDER: dist

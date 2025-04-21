@@ -26,6 +26,9 @@ function createInstance() {
     (response) => {
       // apiData 是 api 返回的数据
       const apiData = response.data
+      console.log("apidata:")
+      console.log(apiData)
+      console.log("--------")
       // 二进制数据则直接返回
       const responseType = response.request?.responseType
       if (responseType === "blob" || responseType === "arraybuffer") return apiData
@@ -117,6 +120,7 @@ function createRequest(instance: AxiosInstance) {
     }
     // 将默认配置 defaultConfig 和传入的自定义配置 config 进行合并成为 mergeConfig
     const mergeConfig = merge(defaultConfig, config)
+    console.log(config)
     return instance(mergeConfig)
   }
 }

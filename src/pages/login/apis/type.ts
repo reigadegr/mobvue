@@ -4,7 +4,4 @@ export interface LoginRequestData {
   /** 密码 */
   password: string
 }
-
-export type CaptchaResponseData = ApiResponseData<string>
-
 export type LoginResponseData = ApiResponseData<{ token: string }>

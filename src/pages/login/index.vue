@@ -21,7 +21,7 @@ function onSubmit() {
     userStore.setToken(data.token)
     router.push("/")
   }).catch(() => {
-    loginFormData.password = ""
+    // loginFormData.password = ""
   }).finally(() => {
     loading.value = false
   })
@@ -42,7 +42,6 @@ function onSubmit() {
         />
         <van-field
           v-model="loginFormData.password"
-          type="password"
           name="password"
           label="密码"
           size="large"

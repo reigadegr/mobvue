@@ -41,10 +41,6 @@ function onLogout() {
         </template>
       </van-cell>
       <van-cell title="📚 Documentation 文档教程" is-link url="https://juejin.cn/column/7472609448201666599" />
-      <van-cell title="📦️ GitHub 代码仓库" is-link url="https://github.com/un-pany/mobvue" />
-      <van-cell title="☕ Donate 捐赠" is-link url="https://github.com/un-pany/mobvue/issues/1" />
-      <van-cell title="💰 Pay 付费服务" is-link url="https://github.com/un-pany/mobvue/issues/2" />
-      <van-cell title="💬 Group 交流群" is-link url="https://github.com/un-pany/mobvue/issues/3" />
     </van-cell-group>
     <van-button block @click="onLogout" un-b-0px un-rounded-0px>
       退出登录

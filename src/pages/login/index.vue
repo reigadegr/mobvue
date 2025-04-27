@@ -11,9 +11,15 @@ const userStore = useUserStore()
 const loading = ref(false)
 
 const loginFormData: LoginRequestData = reactive({
-  username: "admin",
-  password: "123456"
+  username: "",
+  password: ""
 })
+
+/** 快速填充管理员账号密码 */
+function quickInject1() {
+  loginFormData.username = "admin"
+  loginFormData.password = "123456"
+}
 
 function onSubmit() {
   loading.value = true
@@ -50,6 +56,9 @@ function onSubmit() {
         />
       </van-cell-group>
       <div un-mx-16px un-my-32px>
+        <van-button :loading="loading" type="warning" size="large" round block @click.prevent="quickInject1">
+          管理员登录
+        </van-button>
         <van-button
           :loading="loading"
           type="primary"

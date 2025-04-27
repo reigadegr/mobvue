@@ -1,4 +1,3 @@
-import { pinia } from "@/pinia"
 import { getCurrentUserApi } from "@@/apis/users"
 import { setToken as _setToken, getToken, removeToken } from "@@/utils/cache/cookies"
 
@@ -39,11 +38,3 @@ export const useUserStore = defineStore("user", () => {
 
   return { token, roles, username, setToken, getInfo, changeRoles, resetToken }
 })
-
-/**
- * @description 在 SPA 应用中可用于在 pinia 实例被激活前使用 store
- * @description 在 SSR 应用中可用于在 setup 外使用 store
- */
-export function useUserStoreOutside() {
-  return useUserStore(pinia)
-}

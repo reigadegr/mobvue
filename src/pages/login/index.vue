@@ -27,7 +27,7 @@ function onSubmit() {
     userStore.setToken(data.token)
     router.push("/")
   }).catch(() => {
-    // loginFormData.password = ""
+    loginFormData.password = ""
   }).finally(() => {
     loading.value = false
   })

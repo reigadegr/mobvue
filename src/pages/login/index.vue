@@ -12,7 +12,7 @@ const loading = ref(false)
 
 const loginFormData: LoginRequestData = reactive({
   username: "admin",
-  password: "12345678"
+  password: "123456"
 })
 
 function onSubmit() {
@@ -44,6 +44,7 @@ function onSubmit() {
           v-model="loginFormData.password"
           name="password"
           label="密码"
+          type="password"
           size="large"
           :rules="[{ required: true, message: '请填写密码' }]"
         />

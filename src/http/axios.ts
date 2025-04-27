@@ -97,14 +97,24 @@ function createInstance() {
   return instance
 }
 
-/** 创建请求方法 */
 function createRequest(instance: AxiosInstance) {
+  const baseURL = import.meta.env.VITE_BASE_URL
+  return createRequestImpl(instance, baseURL)
+}
+
+function createRequest2(instance: AxiosInstance) {
+  const baseURL = import.meta.env.VITE_MY_URL
+  return createRequestImpl(instance, baseURL)
+}
+
+/** 创建请求方法 */
+function createRequestImpl(instance: AxiosInstance, port: string) {
   return <T>(config: AxiosRequestConfig): Promise<T> => {
     const token = getToken()
     // 默认配置
     const defaultConfig: AxiosRequestConfig = {
       // 接口地址
-      baseURL: import.meta.env.VITE_BASE_URL,
+      baseURL: port,
       // 请求头
       headers: {
         // 携带 Token
@@ -130,3 +140,4 @@ const instance = createInstance()
 
 /** 用于请求的方法 */
 export const request = createRequest(instance)
+export const request2 = createRequest2(instance)

@@ -1,6 +1,6 @@
 import type { AxiosInstance, AxiosRequestConfig } from "axios"
 import { useUserStore } from "@/pinia/stores/user"
-import { getToken } from "@@/utils/cache/cookies"
+import {getJwt, getToken} from "@@/utils/cache/cookies"
 import axios from "axios"
 import { get, merge } from "lodash-es"
 
@@ -111,6 +111,7 @@ function createRequest2(instance: AxiosInstance) {
 function createRequestImpl(instance: AxiosInstance, port: string) {
   return <T>(config: AxiosRequestConfig): Promise<T> => {
     const token = getToken()
+    const jwt = getJwt()
     // 默认配置
     const defaultConfig: AxiosRequestConfig = {
       // 接口地址
@@ -118,7 +119,7 @@ function createRequestImpl(instance: AxiosInstance, port: string) {
       // 请求头
       headers: {
         // 携带 Token
-        "Authorization": token ? `Bearer ${token}` : undefined,
+        "Authorization": jwt ? `Bearer ${jwt}` : undefined,
         "Content-Type": "application/json"
       },
       // 请求体

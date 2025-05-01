@@ -1,5 +1,5 @@
 import { getCurrentUserApi } from "@@/apis/users"
-import { setToken as _setToken, getToken, removeToken } from "@@/utils/cache/cookies"
+import {setToken as _setToken, getToken, removeToken, setJwt} from "@@/utils/cache/cookies"
 
 export const useUserStore = defineStore("user", () => {
   const token = ref<string>(getToken() || "")
@@ -8,10 +8,14 @@ export const useUserStore = defineStore("user", () => {
 
   const username = ref<string>("")
 
+  const jwt = ref<string>("")
+
   // 设置 Token
-  const setToken = (value: string) => {
-    _setToken(value)
-    token.value = value
+  const setToken = (token_value: string, jwt_value: string) => {
+    _setToken(token_value)
+    token.value = token_value
+    setJwt(jwt_value)
+    jwt.value = jwt_value
   }
 
   // 获取用户详情

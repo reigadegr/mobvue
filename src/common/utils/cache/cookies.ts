@@ -14,3 +14,15 @@ export function setToken(token: string) {
 export function removeToken() {
   Cookies.remove(CacheKey.TOKEN)
 }
+
+export function getJwt() {
+  return Cookies.get(CacheKey.JWT)
+}
+
+export function setJwt(jwt: string) {
+  Cookies.set(CacheKey.JWT, jwt)
+}
+
+export function removeJwt() {
+  Cookies.remove(CacheKey.JWT)
+}

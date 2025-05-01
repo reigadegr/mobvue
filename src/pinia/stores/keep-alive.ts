@@ -1,5 +1,4 @@
 import type { RouteLocationNormalizedGeneric } from "vue-router"
-import { pinia } from "@/pinia"
 import { isString } from "@@/utils/validate"
 
 export const useKeepAliveStore = defineStore("keep-alive", () => {

@@ -24,7 +24,9 @@ function quickInject1() {
 function onSubmit() {
   loading.value = true
   loginApi(loginFormData).then(({ data }) => {
-    userStore.setToken(data.token)
+    console.log(`设置的token是${data.token}`)
+    userStore.setToken(data.token, data.jwt)
+    console.log("我的jwt:", data.jwt)
     router.push("/")
   }).catch(() => {
     loginFormData.password = ""
